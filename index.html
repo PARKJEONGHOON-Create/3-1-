@@ -1,0 +1,397 @@
+아래 전체를 `index.html`로 저장하고, 같은 폴더(레포지토리)에 `3학년 1반.jpg` 파일만 같이 올리면 Vercel에서 바로 보입니다.
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>보길초등학교 3학년 1반</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind 커스텀 설정 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            classroomOrange: '#FF9F43',
+            classroomYellow: '#FFE08C',
+            classroomSoft: '#FFF7E8',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-classroomSoft text-slate-800">
+  <!-- 배경 장식 도형 -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <!-- 큰 원 -->
+    <div class="absolute -top-24 -left-24 w-64 h-64 bg-classroomYellow opacity-70 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-orange-200 opacity-60 rounded-full blur-3xl"></div>
+    <!-- 겹치는 사각형들 -->
+    <div class="absolute top-1/3 left-[-60px] w-40 h-40 bg-white/60 border-2 border-orange-200 rotate-12 rounded-3xl"></div>
+    <div class="absolute top-[38%] left-[-10px] w-28 h-28 bg-classroomOrange/40 rotate-[28deg] rounded-3xl"></div>
+    <div class="absolute bottom-1/3 right-[-50px] w-36 h-36 bg-white/60 border-2 border-yellow-300 -rotate-12 rounded-3xl"></div>
+    <div class="absolute bottom-[30%] right-[-5px] w-24 h-24 bg-yellow-200/60 rotate-[20deg] rounded-3xl"></div>
+  </div>
+
+  <!-- 페이지 전체 래퍼 -->
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+
+    <!-- 상단 헤더 -->
+    <header class="flex items-center justify-between mb-10">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-classroomOrange flex items-center justify-center text-white text-xl font-bold shadow-md">
+          3-1
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-orange-500 uppercase tracking-[0.18em]">Bogil Elementary School</p>
+          <h1 class="text-lg sm:text-xl font-bold text-slate-800">
+            보길초등학교 3학년 1반
+          </h1>
+        </div>
+      </div>
+
+      <nav class="hidden sm:flex gap-4 text-sm font-medium">
+        <a href="#about" class="hover:text-orange-600">우리 반 소개</a>
+        <a href="#class-status" class="hover:text-orange-600">학급 현황</a>
+        <a href="#lectures" class="hover:text-orange-600">배움 활동</a>
+        <a href="#links" class="hover:text-orange-600">링크</a>
+        <a href="#contact" class="hover:text-orange-600">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero 섹션 -->
+    <section class="mb-16 sm:mb-20">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- 왼쪽: 우리 반 사진 -->
+        <div class="relative">
+          <!-- 장식 도형 -->
+          <div class="absolute -top-4 -left-4 w-16 h-16 bg-white/80 border border-orange-200 rounded-3xl -rotate-6"></div>
+          <div class="absolute -bottom-6 -right-2 w-20 h-20 bg-yellow-200/80 rounded-full -z-10"></div>
+
+          <div class="relative rounded-3xl overflow-hidden shadow-xl border border-white/80 bg-white">
+            <!-- 실제 사진 파일명: 3학년 1반.jpg -->
+            <img
+              src="3학년 1반.jpg"
+              alt="보길초등학교 3학년 1반 단체 사진"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- 오른쪽: 소개 + 버튼 -->
+        <div class="space-y-5">
+          <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 border border-yellow-200 text-xs font-semibold text-orange-500 tracking-[0.2em] uppercase">
+            우리 반 이야기
+          </p>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold leading-snug text-slate-900">
+            보길초등학교<br />
+            <span class="text-classroomOrange">3학년 1반</span>
+          </h2>
+
+          <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+            배움을 즐기고, 서로를 존중하며, 각자의 꿈을 키워 나가는
+            <strong>보길초 3학년 1반</strong>입니다.<br />
+            교실 안에서의 작은 경험 하나하나가 미래를 향한 큰 발걸음이 되도록
+            함께 자라고, 함께 웃는 반을 만들어 가고 있습니다.
+          </p>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a
+              href="#about"
+              class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-classroomOrange text-white text-sm font-semibold shadow-md hover:bg-orange-500 transition"
+            >
+              우리 반 소개
+            </a>
+            <a
+              href="#lectures"
+              class="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-white text-orange-600 text-sm font-semibold border border-orange-200 shadow-sm hover:bg-orange-50 transition"
+            >
+              생각꾸러미
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About 섹션 -->
+    <section id="about" class="mb-16 sm:mb-20">
+      <div class="max-w-3xl">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+          <span class="w-2 h-8 rounded-full bg-classroomOrange"></span>
+          우리 반은 이런 반이에요
+        </h3>
+
+        <div class="space-y-3 text-sm sm:text-base leading-relaxed text-slate-700 bg-white/80 rounded-3xl border border-yellow-200 px-5 sm:px-6 py-5 shadow-sm">
+          <p>
+            우리 반은 <strong>배움을 즐기는 반</strong>입니다. 호기심을 가지고 묻고,
+            직접 해 보며, 스스로 깨닫는 활동을 통해 공부가 “해야 하는 일”이 아니라
+            “하고 싶은 일”이 되도록 돕습니다.
+          </p>
+          <p>
+            우리 반은 <strong>서로 존중하고 배려하는 반</strong>입니다. 친구의 생각을
+            끝까지 들어 주고, 다른 점을 인정하며, 함께 해결책을 찾아가는
+            경험을 통해 더불어 사는 힘을 기릅니다.
+          </p>
+          <p>
+            우리 반은 <strong>나의 꿈을 키워 나가는 반</strong>입니다. 독서, 프로젝트 활동,
+            디지털 도구 활용 등 다양한 경험을 통해 “나는 어떤 사람으로 자라고 싶은가?”
+            스스로 생각하고 계획할 수 있는 기회를 제공합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Class Status 섹션 -->
+    <section id="class-status" class="mb-16 sm:mb-20">
+      <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <span class="w-2 h-8 rounded-full bg-yellow-300"></span>
+        학급 현황
+      </h3>
+
+      <div class="grid sm:grid-cols-3 gap-6">
+        <!-- 남학생 -->
+        <div class="relative bg-white/90 rounded-3xl border border-orange-200 shadow-sm px-5 py-6 flex flex-col items-center text-center">
+          <div class="absolute -top-3 -left-3 w-8 h-8 rounded-2xl bg-classroomOrange/80 flex items-center justify-center text-white text-lg shadow">
+            👦
+          </div>
+          <p class="text-xs font-medium text-slate-500 mb-1">남학생</p>
+          <p class="text-4xl font-extrabold text-slate-900 mb-1">3</p>
+          <p class="text-xs text-slate-500">즐겁게 도전하는 우리 반 형아들</p>
+        </div>
+
+        <!-- 여학생 -->
+        <div class="relative bg-white/90 rounded-3xl border border-yellow-300 shadow-sm px-5 py-6 flex flex-col items-center text-center">
+          <div class="absolute -top-3 -left-3 w-8 h-8 rounded-2xl bg-yellow-300 flex items-center justify-center text-white text-lg shadow">
+            👧
+          </div>
+          <p class="text-xs font-medium text-slate-500 mb-1">여학생</p>
+          <p class="text-4xl font-extrabold text-slate-900 mb-1">7</p>
+          <p class="text-xs text-slate-500">반을 따뜻하게 채우는 우리 반 친구들</p>
+        </div>
+
+        <!-- 특수학급 재학 여학생 -->
+        <div class="relative bg-white/90 rounded-3xl border border-orange-100 shadow-sm px-5 py-6 flex flex-col items-center text-center">
+          <div class="absolute -top-3 -left-3 w-8 h-8 rounded-2xl bg-pink-300 flex items-center justify-center text-white text-lg shadow">
+            🌈
+          </div>
+          <p class="text-xs font-medium text-slate-500 mb-1">특수학급(여학생)</p>
+          <p class="text-4xl font-extrabold text-slate-900 mb-1">1</p>
+          <p class="text-xs text-slate-500">
+            함께 배우고 함께 성장하는 소중한 우리 반 친구
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lectures 섹션 -->
+    <section id="lectures" class="mb-16 sm:mb-20">
+      <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <span class="w-2 h-8 rounded-full bg-classroomOrange"></span>
+        우리 반 배움 활동
+      </h3>
+
+      <div class="space-y-5">
+        <!-- 독서교육 -->
+        <div class="bg-white/90 rounded-3xl border border-yellow-200 shadow-sm px-5 sm:px-6 py-5 flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
+          <div class="flex-1">
+            <h4 class="text-lg font-semibold text-slate-900 mb-1.5">독서교육</h4>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              다양한 그림책과 동화를 함께 읽으며, 책 속 인물의 마음과 생각을
+              자연스럽게 이해하도록 돕습니다. 줄거리만 외우는 독서가 아니라
+              나의 경험과 연결하여 이야기할 수 있는 <strong>생각 나누기 독서</strong>를
+              지향합니다.
+            </p>
+          </div>
+          <div class="flex justify-center sm:justify-end">
+            <!-- 간단 이미지(아이콘 상자) -->
+            <div class="w-24 h-24 rounded-2xl bg-orange-100 flex items-center justify-center text-3xl shadow-inner">
+              📚
+            </div>
+          </div>
+        </div>
+
+        <!-- 전남 e학습터 -->
+        <div class="bg-white/90 rounded-3xl border border-yellow-200 shadow-sm px-5 sm:px-6 py-5 flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
+          <div class="flex-1">
+            <h4 class="text-lg font-semibold text-slate-900 mb-1.5">전남 e학습터</h4>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              <strong>전남 e학습터</strong>를 활용해 교실에서 배운 내용을 스스로
+              다시 확인하고, 부족한 부분은 개별 학습으로 보충합니다. 학년·교과별
+              맞춤형 콘텐츠를 통해 학생마다 다른 속도를 존중하면서도
+              기본기를 탄탄히 다질 수 있도록 합니다.
+            </p>
+          </div>
+          <div class="flex justify-center sm:justify-end">
+            <div class="w-24 h-24 rounded-2xl bg-yellow-100 flex items-center justify-center text-3xl shadow-inner">
+              💻
+            </div>
+          </div>
+        </div>
+
+        <!-- 수해력교육 -->
+        <div class="bg-white/90 rounded-3xl border border-yellow-200 shadow-sm px-5 sm:px-6 py-5 flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
+          <div class="flex-1">
+            <h4 class="text-lg font-semibold text-slate-900 mb-1.5">수해력 교육</h4>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              계산만 잘하는 수학이 아니라, <strong>상황을 이해하고 문제를 해석하는 힘</strong>을
+              기르는 수해력 중심 수업을 운영합니다. 그림, 모형, 이야기 등 다양한
+              표현 방법을 활용해 수학 개념을 눈으로 보고 손으로 느끼며 학습합니다.
+            </p>
+          </div>
+          <div class="flex justify-center sm:justify-end">
+            <div class="w-24 h-24 rounded-2xl bg-orange-100 flex items-center justify-center text-3xl shadow-inner">
+              ➕
+            </div>
+          </div>
+        </div>
+
+        <!-- 문제기반 프로젝트 수업 -->
+        <div class="bg-white/90 rounded-3xl border border-yellow-200 shadow-sm px-5 sm:px-6 py-5 flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
+          <div class="flex-1">
+            <h4 class="text-lg font-semibold text-slate-900 mb-1.5">문제기반 프로젝트 수업</h4>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              우리 마을·학교·일상에서 찾은 실제 문제를 바탕으로 팀을 이루어
+              해결 방법을 탐색하는 <strong>문제기반 프로젝트 수업</strong>을 운영합니다.
+              스스로 조사하고, 토의하며, 결과물을 만들어 발표하는 과정에서
+              협력, 의사소통, 비판적 사고 역량을 함께 기릅니다.
+            </p>
+          </div>
+          <div class="flex justify-center sm:justify-end">
+            <div class="w-24 h-24 rounded-2xl bg-yellow-100 flex items-center justify-center text-3xl shadow-inner">
+              🧩
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links 섹션 -->
+    <section id="links" class="mb-16 sm:mb-20">
+      <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+        <span class="w-2 h-8 rounded-full bg-yellow-300"></span>
+        링크 모음
+      </h3>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <!-- 학교 홈페이지 -->
+        <a
+          href="https://bogil.es.jne.kr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-white/90 rounded-3xl border border-yellow-200 shadow-sm px-5 py-5 flex items-center justify-between gap-4 hover:border-classroomOrange hover:-translate-y-0.5 transition"
+        >
+          <div>
+            <p class="text-xs font-semibold text-orange-500 mb-1">School Website</p>
+            <p class="text-base font-semibold text-slate-900">보길초등학교 홈페이지</p>
+            <p class="text-xs text-slate-500 mt-1">학교 소식, 가정통신문, 교육과정 안내 바로가기</p>
+          </div>
+          <span class="text-2xl group-hover:translate-x-1 transition">🏫</span>
+        </a>
+
+        <!-- 학급 홈페이지 (HiClass) -->
+        <a
+          href="https://www.hiclass.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-white/90 rounded-3xl border border-yellow-200 shadow-sm px-5 py-5 flex items-center justify-between gap-4 hover:border-classroomOrange hover:-translate-y-0.5 transition"
+        >
+          <div>
+            <p class="text-xs font-semibold text-orange-500 mb-1">Class Online</p>
+            <p class="text-base font-semibold text-slate-900">학급 홈페이지 (HiClass)</p>
+            <p class="text-xs text-slate-500 mt-1">알림장, 사진, 과제, 소통이 이루어지는 온라인 교실</p>
+          </div>
+          <span class="text-2xl group-hover:translate-x-1 transition">📱</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact 섹션 -->
+    <section id="contact" class="mb-10 sm:mb-14">
+      <h3 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+        <span class="w-2 h-8 rounded-full bg-classroomOrange"></span>
+        Contact
+      </h3>
+
+      <div class="bg-white/90 rounded-3xl border border-yellow-200 shadow-sm px-5 sm:px-6 py-6 max-w-xl">
+        <p class="text-sm sm:text-base text-slate-700 mb-4">
+          전입학 관련 사항은 아래로 연락주세요.
+        </p>
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div class="flex-1">
+            <p class="text-xs font-semibold text-slate-500 mb-1">이메일</p>
+            <div class="px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-sm font-mono text-slate-800 break-all" id="email-text">
+              abclkinl@gmail.com
+            </div>
+          </div>
+          <button
+            type="button"
+            onclick="copyEmail()"
+            class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-classroomOrange text-white text-sm font-semibold shadow-md hover:bg-orange-500 transition min-w-[120px]"
+          >
+            이메일 복사
+          </button>
+        </div>
+
+        <p id="copy-message" class="mt-2 text-xs text-green-600 hidden">
+          이메일 주소가 복사되었습니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-orange-100 pt-4 mt-6 text-center text-xs text-slate-500">
+      <p class="mb-1">
+        Designed for Future Education
+      </p>
+      <p>
+        © 2025 PARK JEONG HOON. All Rights Reserved.
+      </p>
+    </footer>
+  </div>
+
+  <!-- 이메일 복사 스크립트 -->
+  <script>
+    function copyEmail() {
+      const email = 'abclkinl@gmail.com';
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(email).then(function () {
+          const msg = document.getElementById('copy-message');
+          if (msg) {
+            msg.classList.remove('hidden');
+            setTimeout(() => msg.classList.add('hidden'), 2000);
+          }
+        });
+      } else {
+        // 구형 브라우저 대비 fallback
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+
+        const msg = document.getElementById('copy-message');
+        if (msg) {
+          msg.classList.remove('hidden');
+          setTimeout(() => msg.classList.add('hidden'), 2000);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+```
